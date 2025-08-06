@@ -1,7 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
-using WebApplication1.Application.Services;
-using WebApplication1.Domain.Repositories;
+using WebApplication1.Application.Repositories;
 using WebApplication1.Infrastructure.Repositories;
+using WebApplication1.Infrastructure.Services.BreweryApi;
+using WebApplication1.Infrastructure.Services.Caching;
 
 namespace WebApplication1.Infrastructure
 {
@@ -12,8 +13,10 @@ namespace WebApplication1.Infrastructure
             services.AddMemoryCache();
             services.AddHttpClient();
 
+            services.AddSingleton<ICacheService, MemoryCacheService>();
+            services.AddScoped<IBreweryApiService, BreweryApiService>();
+
             services.AddScoped<IBreweryRepository, BreweryRepository>();
-            services.AddScoped<IBreweryService, BreweryService>();
 
             return services;
         }
