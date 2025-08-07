@@ -2,8 +2,6 @@
 
 ## Struktura projektu
 
-Projekt został zorganizowany zgodnie z zasadami Clean Architecture, z wyraźnym podziałem na warstwy:
-
 ### Warstwy aplikacji
 
 - **API** - Zawiera kontrolery, modele DTO i mappery do komunikacji z klientami
@@ -60,6 +58,7 @@ Aplikacja będzie dostępna pod adresem: http://localhost:5098
 - `search` - Wyszukiwanie ogólne
 - `byCity` - Filtrowanie po mieście
 - `byName` - Filtrowanie po nazwie
+- `latitude` i `latitude` - Jeśli oba parametry są podane i poprawne wyniki zostaną posortowane po odległości browaru od podanego miejsca
 - `sortBy` - Sortowanie wyników (name, type, city)
 - `sortDirection` - Kierunek sortowania (ascending, descending)
 - `page` - Numer strony (domyślnie 1)
